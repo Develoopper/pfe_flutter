@@ -58,12 +58,12 @@ class _LoadingPageState extends State<LoadingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange,
-      // body: Center(
-      //   child: SpinKitSquareCircle(
-      //     color: Colors.white,
-      //     size: 60.0,
-      //   )
-      // ),
+      body: Center(
+        child: SpinKitThreeBounce(
+          color: Colors.black,
+          size: 60.0,
+        )
+      ),
     );
   }
 }

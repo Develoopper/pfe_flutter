@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http; // add the http plugin in pubspec.yaml 
 import 'classes/Menu.dart';
  
 class Services {
-  static const ROOT = 'http://192.168.1.12:3000/menus';
+  //static const ROOT = 'http://192.168.1.12:3000/menus';
+  static const ROOT = 'https://bts-pfe-app.herokuapp.com/menus';
  
   static Future<List<Menu>> getMenus() async {
     try {
