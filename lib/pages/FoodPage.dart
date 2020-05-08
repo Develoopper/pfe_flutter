@@ -40,7 +40,7 @@ class _FoodPageState extends State<FoodPage> {
     print("build");
 
     data = ModalRoute.of(context).settings.arguments;
-
+    print(data["pressedCategorie"]);
     return Scaffold(
       drawer: MyDrawer(),
       floatingActionButton: FloatingActionButton(

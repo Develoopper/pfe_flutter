@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => LoadingPage(),
-        '/homePage': (context) => HomePage(),
+        '/': (context) => HomePage(),
+        '/loadingPage': (context) => LoadingPage(),
         '/foodPage': (context) => FoodPage(),
         '/cartPage': (context) => CartPage(),
       }

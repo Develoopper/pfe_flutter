@@ -4,35 +4,9 @@ import 'classes/Menu.dart';
  
 class Services {
   static const ROOT = 'http://192.168.1.12:3000/menus';
-  static const _CREATE_TABLE_ACTION = 'CREATE_TABLE';
-  static const _GET_ALL_ACTION = 'GET_ALL';
-  static const _ADD_MENU_ACTION = 'ADD_MENU';
-  static const _UPDATE_MENU_ACTION = 'UPDATE_MENU';
-  static const _DELETE_MENU_ACTION = 'DELETE_MENU';
- 
-  // Method to create the table Menus.
-  static Future<String> createTable() async {
-    try {
-      // add the parameters to pass to the request.
-      var map = Map<String, dynamic>();
-      map['action'] = _CREATE_TABLE_ACTION;
-      final response = await http.post(ROOT, body: map);
-      print('Create Table Response: ${response.body}');
-      if (200 == response.statusCode) {
-        return response.body;
-      } else {
-        return "error";
-      }
-    } catch (e) {
-      return "error";
-    }
-  }
  
   static Future<List<Menu>> getMenus() async {
-    //print("************");
     try {
-      var map = Map<String, dynamic>();
-      map['action'] = _GET_ALL_ACTION;
       final response = await http.get(ROOT);
       print('getMenus Response: ${response.body}');
       if (200 == response.statusCode) {
@@ -65,7 +39,6 @@ class Services {
   static Future<String> addMenu(String libelle, String type, double prix, int stars, String image, int duree) async {
     try {
       var map = Map<String, dynamic>();
-      map['action'] = _ADD_MENU_ACTION;
       map['libelle'] = libelle;
       map['type'] = type	;
       map['prix'] = prix.toString();
@@ -97,7 +70,7 @@ class Services {
   static Future<String> updateMenu(int id, String libelle, String type, double prix, int stars, String image, int duree) async {
     try {
       var map = Map<String, dynamic>();
-      map['action'] = _UPDATE_MENU_ACTION;
+
       map['id'] = id.toString();
       map['libelle'] = libelle;
       map['type'] = type	;
@@ -121,7 +94,7 @@ class Services {
   static Future<String> deleteMenu(int id) async {
     try {
       var map = Map<String, dynamic>();
-      map['action'] = _DELETE_MENU_ACTION;
+
       map['id'] = id.toString();
       final response = await http.post(ROOT, body: map);
       print('deleteMenu Response: ${response.body}');
@@ -132,6 +105,24 @@ class Services {
       }
     } catch (e) {
       return "error"; // returning just an "error" string to keep this simple...
+    }
+  }
+
+  // Method to create the table Menus.
+  static Future<String> createTable() async {
+    try {
+      // add the parameters to pass to the request.
+      var map = Map<String, dynamic>();
+
+      final response = await http.post(ROOT, body: map);
+      print('Create Table Response: ${response.body}');
+      if (200 == response.statusCode) {
+        return response.body;
+      } else {
+        return "error";
+      }
+    } catch (e) {
+      return "error";
     }
   }
 }

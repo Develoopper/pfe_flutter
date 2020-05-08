@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pfe_flutter/Services.dart';
 import 'package:pfe_flutter/classes/Menu.dart';
 import 'package:pfe_flutter/widgets/MenuCard.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingPage extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _LoadingPageState extends State<LoadingPage> {
 
   List<MenuCard> menuCardList = List();
   Map data = {};
-  static bool firstLoading = true;
+  static bool firstLoading = false;
 
   void fillMenuCards() async {
     print("fillMenuCards");
@@ -56,6 +57,13 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange,
+      // body: Center(
+      //   child: SpinKitSquareCircle(
+      //     color: Colors.white,
+      //     size: 60.0,
+      //   )
+      // ),
     );
   }
 }
