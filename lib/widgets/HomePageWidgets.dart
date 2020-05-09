@@ -32,7 +32,7 @@ class Boxes extends StatelessWidget {
           disabledColor: Colors.black,
           onPressed: () {
             print(name);
-            Navigator.pushReplacementNamed(context, '/loadingPage', arguments: {
+            Navigator.pushNamed(context, '/loadingPage', arguments: {
               'pressedCategorie': name + "Page"
             });
           },
