@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_flutter/widgets/CartItem.dart';
-<<<<<<< HEAD
-=======
-
->>>>>>> e998618ed39079cab2255021d3eb4c0541d94951
 
 
 class Cart extends StatefulWidget {
@@ -11,11 +7,7 @@ class Cart extends StatefulWidget {
   _CartState createState() => _CartState();
 }
 
-<<<<<<< HEAD
 class _CartState extends State<Cart> {
-=======
-class _CartPageState extends State<CartPage> {
->>>>>>> e998618ed39079cab2255021d3eb4c0541d94951
   @override
   Widget build(BuildContext context) {
     return Scaffold(
