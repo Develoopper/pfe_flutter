@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/HomePageWidgets.dart';
+import '../widgets/MyDrawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,8 +18,10 @@ class _HomePageState extends State<HomePage> {
         DeviceOrientation.portraitDown,
       ]);
     return Scaffold(
+      drawer: Drawer(),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+         
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         actions: <Widget>[
@@ -29,6 +32,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {},
         ), 
         ],
+
       ),
       body: Container(
         
