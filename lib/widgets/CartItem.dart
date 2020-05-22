@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'Counter.dart';
-=======
 import 'package:pfe_flutter/widgets/Counter.dart';
->>>>>>> e998618ed39079cab2255021d3eb4c0541d94951
 
 class CartItem extends StatelessWidget {
   const CartItem({
