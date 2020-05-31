@@ -21,7 +21,7 @@ class CartItem extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.elliptical(30.0, 30.0)),
             shape: BoxShape.rectangle,
           ),
-          child: Image.asset(menu.image),
+          child: Image.network(menu.image),
         ),
         Column(
           children: <Widget>[

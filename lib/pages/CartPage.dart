@@ -4,7 +4,7 @@ import 'package:pfe_flutter/widgets/CartItem.dart';
 
 class CartPage extends StatefulWidget {
 
-  static List<CartItem> cartItemList = [];
+  static List<CartItem> cartItemList = List();
 
   static double cartTotalAmount() {
     double total = 0;
@@ -47,7 +47,6 @@ class _CartPageState extends State<CartPage> {
                 child: Row(
                   children: [
                     Expanded(
-                      
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
