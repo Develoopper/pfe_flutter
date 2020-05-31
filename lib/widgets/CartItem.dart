@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pfe_flutter/classes/Menu.dart';
 import 'package:pfe_flutter/widgets/Counter.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({
-    Key key,
-  }) : super(key: key);
+
+  final Menu menu;
+
+  CartItem({Key key, this.menu}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +21,17 @@ class CartItem extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.elliptical(30.0, 30.0)),
             shape: BoxShape.rectangle,
           ),
-          child: Image.asset("assets/images/pizza.png"),
+          child: Image.asset(menu.image),
         ),
         Column(
           children: <Widget>[
-            Text("Pizza Moyen",
+            Text(menu.libellee,
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0)),
-            Text("40Dhs TTC"),
-            MyCounter(),
+            Text(menu.prix.toString()),
+            Counter(),
           ],
         ),
       ],

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MyCounter extends StatefulWidget {
-  const MyCounter({
+class Counter extends StatefulWidget {
+  const Counter({
     Key key,
   }) : super(key: key);
 
   @override
-  _MyCounterState createState() => _MyCounterState();
+  _CounterState createState() => _CounterState();
 }
 
-class _MyCounterState extends State {
+class _CounterState extends State {
   int _currentAmount = 1;
   @override
   Widget build(BuildContext context) {
