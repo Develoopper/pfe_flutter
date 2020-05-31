@@ -26,10 +26,10 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         actions: <Widget>[
           IconButton(
-          iconSize: 40,
+          iconSize: 30,
           color: Colors.grey[200],
-          icon: Icon(Icons.edit_location),
-          onPressed: () {},
+          icon: Icon(Icons.person_outline),
+          onPressed: (){Navigator.pushNamed(context,'/profilePage');},
         ), 
         ],
 
