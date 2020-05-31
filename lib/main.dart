@@ -3,6 +3,7 @@ import 'package:pfe_flutter/pages/FoodPage.dart';
 import 'package:pfe_flutter/pages/HomePage.dart';
 import 'package:pfe_flutter/pages/LoadingPage.dart';
 import 'package:pfe_flutter/pages/CartPage.dart';
+import 'package:pfe_flutter/pages/ProfilePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         '/loadingPage': (context) => LoadingPage(),
         '/foodPage': (context) => FoodPage(),
         '/cartPage': (context) => CartPage(),
+        '/profilePage': (context) => ProfilePage(),
       }
     );
   }
