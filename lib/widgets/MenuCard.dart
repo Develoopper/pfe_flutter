@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pfe_flutter/pages/CartPage.dart';
+import 'package:pfe_flutter/widgets/CartItem.dart';
 import '../classes/Menu.dart';
 import 'package:pfe_flutter/widgets/CircleButton.dart';
 
@@ -34,7 +36,11 @@ class MenuCard extends StatelessWidget {
             Positioned(
               top: 10,
               right: 10,
-              child: CircleButton(onTap: () => print("Cool"), iconData: Icons.add_shopping_cart, iconColor: Colors.orange,),
+              child: CircleButton(
+                onTap: () => CartPage.cartItemList.add(CartItem(menu: menu)),
+                iconData: Icons.add_shopping_cart, 
+                iconColor: Colors.orange
+              ),
             ),
             Positioned(
               top: 10,

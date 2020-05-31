@@ -2,12 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:pfe_flutter/widgets/CartItem.dart';
 
 
-class Cart extends StatefulWidget {
+class CartPage extends StatefulWidget {
+
+  static List<CartItem> cartItemList = [];
+
+  static double cartTotalAmount() {
+    double total = 0;
+    for (var cartItem in cartItemList) {
+      total += cartItem.menu.prix;
+    }
+    return total;
+  }
+
   @override
-  _CartState createState() => _CartState();
+  _CartPageState createState() => _CartPageState();
 }
 
-class _CartState extends State<Cart> {
+class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +38,7 @@ class _CartState extends State<Cart> {
               ),
               Expanded(
                 child: Column(
-                  children: <Widget>[
-                    CartItem(),
-                    CartItem(),
-                  ],
+                  children: CartPage.cartItemList,
                 ),
               ),
               Divider(),
@@ -45,7 +53,7 @@ class _CartState extends State<Cart> {
                         children: [
                           Text("TOTAL",
                               style: Theme.of(context).textTheme.subtitle),
-                          Text("USD. 899.01",
+                          Text(CartPage.cartTotalAmount().toString(),
                               style: Theme.of(context).textTheme.headline),
                         ],
                       ),
