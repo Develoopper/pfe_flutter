@@ -6,6 +6,14 @@ class CartPage extends StatefulWidget {
 
   static List<CartItem> cartItemList = [];
 
+  static double cartTotalAmount() {
+    double total = 0;
+    for (var cartItem in cartItemList) {
+      total += cartItem.menu.prix;
+    }
+    return total;
+  }
+
   @override
   _CartPageState createState() => _CartPageState();
 }
@@ -45,7 +53,7 @@ class _CartPageState extends State<CartPage> {
                         children: [
                           Text("TOTAL",
                               style: Theme.of(context).textTheme.subtitle),
-                          Text("USD. 899.01",
+                          Text(CartPage.cartTotalAmount().toString(),
                               style: Theme.of(context).textTheme.headline),
                         ],
                       ),
