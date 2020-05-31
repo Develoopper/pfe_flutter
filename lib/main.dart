@@ -18,13 +18,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/loadingPage': (context) => LoadingPage(),
         '/foodPage': (context) => FoodPage(),
-<<<<<<< HEAD
-        '/cartPage': (context) => Cart(),
-        '/profilePage': (context) => ProfilePage(),
-
-=======
         '/cartPage': (context) => CartPage(),
->>>>>>> a684a413d5b9fc3f2b76220745e9935e15f9694c
       }
     );
   }
