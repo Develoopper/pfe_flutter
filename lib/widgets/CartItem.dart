@@ -13,7 +13,7 @@ class CartItem extends StatelessWidget {
     return Row(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(right: 10.0, top: 10.0),
+          margin: EdgeInsets.only(right: 30.0, top: 10.0),
           width: 150.0,
           height: 150.0,
           decoration: BoxDecoration(
@@ -24,6 +24,7 @@ class CartItem extends StatelessWidget {
           child: Image.network(menu.image),
         ),
         Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Text(menu.libellee,
                 style: TextStyle(
@@ -32,6 +33,8 @@ class CartItem extends StatelessWidget {
                     fontSize: 20.0)),
             Text(menu.prix.toString()),
             Counter(),
+            FlatButton(onPressed: null, child: Text("Delete",style: TextStyle(color: Colors.black,fontSize: 18.0),))
+            
           ],
         ),
       ],
