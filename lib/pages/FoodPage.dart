@@ -45,7 +45,7 @@ class _FoodPageState extends State<FoodPage> {
       
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
-        onPressed: () {Navigator.pushNamed(context, '/cartPage');},
+        onPressed: () => Navigator.pushNamed(context, '/cartPage'),
         child: Icon(Icons.shopping_cart),
       ),
       body: CustomScrollView(

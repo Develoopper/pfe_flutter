@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pfe_flutter/Services.dart';
 import '../widgets/HomePageWidgets.dart';
 import '../widgets/MyDrawer.dart';
 
@@ -9,7 +10,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   print(Services.getMe());
+  // }
 
   @override
   Widget build(BuildContext context) {

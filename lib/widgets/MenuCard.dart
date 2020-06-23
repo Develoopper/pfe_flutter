@@ -4,15 +4,22 @@ import 'package:pfe_flutter/widgets/CartItem.dart';
 import '../classes/Menu.dart';
 import 'package:pfe_flutter/widgets/CircleButton.dart';
 
-class MenuCard extends StatelessWidget {
+class MenuCard extends StatefulWidget {
 
   final Menu menu;
 
   MenuCard({Key key, this.menu}) : super(key: key);
 
+  @override
+  _MenuCardState createState() => _MenuCardState();
+}
+
+class _MenuCardState extends State<MenuCard> {
+  var favorite = false;
+
   List<Widget> stars() {
     List<Widget> starsList = List();
-    for (var i = 0; i < menu.stars; i++) {
+    for (var i = 0; i < widget.menu.stars; i++) {
       starsList.add(Icon(Icons.star, color: Colors.orangeAccent, size: 16.0));
     }
     return starsList;
@@ -20,6 +27,7 @@ class MenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {favorite = true;});
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: ClipRRect(
@@ -29,7 +37,7 @@ class MenuCard extends StatelessWidget {
             Container(
               width: 600.0,
               child: Image.network(
-                menu.image,
+                widget.menu.image,
                 fit: BoxFit.fitWidth,
               )
             ),
@@ -37,7 +45,7 @@ class MenuCard extends StatelessWidget {
               top: 10,
               right: 10,
               child: CircleButton(
-                onTap: () => CartPage.cartItemList.add(CartItem(menu: menu)),
+                onTap: () => CartPage.cartItemList.add(CartItem(menu: widget.menu)),
                 iconData: Icons.add_shopping_cart, 
                 iconColor: Colors.orange
               ),
@@ -45,7 +53,11 @@ class MenuCard extends StatelessWidget {
             Positioned(
               top: 10,
               left: 10,
-              child: CircleButton(onTap: () => print("Cool"), iconData: Icons.favorite_border, iconColor: Colors.white,),
+              child: CircleButton(
+                onTap: () => setState(() {favorite = true;}), 
+                iconData: favorite == true ? Icons.favorite : Icons.favorite_border, 
+                iconColor: Colors.white
+              ),
             ),
             Positioned(
               left: 0.0,
@@ -71,7 +83,7 @@ class MenuCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        menu.libellee,
+                        widget.menu.libellee,
                         style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
@@ -90,13 +102,13 @@ class MenuCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Text(
-                        menu.prix.toStringAsFixed(0) + " Dh",
+                        widget.menu.prix.toStringAsFixed(0) + " Dh",
                         style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.orangeAccent),
                       ),
-                      Text(menu.duree.toString() + " min", style: TextStyle(color: Colors.grey))
+                      Text(widget.menu.duree.toString() + " min", style: TextStyle(color: Colors.grey))
                     ],
                   ),
                 ],

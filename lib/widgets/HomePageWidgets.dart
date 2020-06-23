@@ -33,7 +33,7 @@ class Boxes extends StatelessWidget {
           onPressed: () {
             print(name);
             Navigator.pushNamed(context, '/loadingPage', arguments: {
-              'pressedCategorie': name + "Page"
+              'pressedCategorie': name
             });
           },
         ),
@@ -56,7 +56,7 @@ class HomeTable extends StatelessWidget {
       TableRow(
         children: [
         TableCell(
-          child: Boxes(boxIcon:Icon(Icons.favorite),name: "Favorite")
+          child: Boxes(boxIcon:Icon(Icons.favorite),name: "favoris")
         ),
         TableCell(
           child: Container(
@@ -76,10 +76,10 @@ class HomeTable extends StatelessWidget {
       ]),
       TableRow(children: [
         TableCell(
-          child: Boxes(boxIcon:Icon(MyFlutterApp.i010_burger),name: "Burger",)
-                      ),
+          child: Boxes(boxIcon:Icon(MyFlutterApp.i010_burger),name: "burger",)
+        ),
         TableCell(
-          child: Boxes(boxIcon:Icon(MyFlutterApp.i049_breakfast),name: "Breakfast")
+          child: Boxes(boxIcon:Icon(MyFlutterApp.i049_breakfast),name: "breakfast")
         ),
         TableCell(
           child: Container(
@@ -100,10 +100,10 @@ class HomeTable extends StatelessWidget {
           ),
         ),
         TableCell(
-          child: Boxes(boxIcon:Icon(MyFlutterApp.i023_pizza_slice),name: "Pizza")
+          child: Boxes(boxIcon:Icon(MyFlutterApp.i023_pizza_slice),name: "pizza")
         ),
         TableCell(
-          child: Boxes(boxIcon:Icon(MyFlutterApp.i043_chicken_leg),name: "Chicken")
+          child: Boxes(boxIcon:Icon(MyFlutterApp.i043_chicken_leg),name: "chicken")
         ),
       ])
     ]);
