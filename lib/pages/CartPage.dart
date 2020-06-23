@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_flutter/widgets/CartItem.dart';
 
-
 class CartPage extends StatefulWidget {
-
   static List<CartItem> cartItemList = List();
 
   static double cartTotalAmount() {
@@ -37,8 +35,10 @@ class _CartPageState extends State<CartPage> {
                 ],
               ),
               Expanded(
-                child: Column(
-                  children: CartPage.cartItemList,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: CartPage.cartItemList,
+                  ),
                 ),
               ),
               Divider(),
